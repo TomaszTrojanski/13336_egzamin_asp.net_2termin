@@ -1,0 +1,59 @@
+﻿@model IEnumerable<_13336_egzamin_asp.net_2termin.Models.TaskModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista Zadań</h1>
+
+<p>
+    <a asp-action="Create">Dodaj zadanie</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataUtworzenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TerminWykonania)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JobDone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataUtworzenia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TerminWykonania)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JobDone)
+            </td>
+            <td>
+                @Html.ActionLink("Gotowe", "JobDone", new { id = item.IdTask }) |
+                @Html.ActionLink("Edycja", "Edit", new { id = item.IdTask }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.IdTask }) |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -50,7 +50,7 @@ namespace _13336_egzamin_asp.net_2termin
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Task}/{action=Index}/{id?}");
             });
         }
     }
